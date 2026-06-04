@@ -1,19 +1,29 @@
-// ===== Palette Switcher =====
-const PALETTES = ['purple', 'blue', 'green', 'teal', 'indigo'];
-const saved = localStorage.getItem('palette') || 'purple';
+// ===== Palette & Theme =====
+const PALETTES = ['purple', 'blue', 'green', 'red', 'orange'];
 
 function applyPalette(name) {
   document.documentElement.setAttribute('data-palette', name === 'purple' ? '' : name);
-  document.querySelectorAll('.palette-btn').forEach(btn => {
+  document.querySelectorAll('.palette-btn[data-palette]').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.palette === name);
   });
   localStorage.setItem('palette', name);
 }
 
-applyPalette(saved);
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme === 'dark' ? '' : theme);
+  localStorage.setItem('theme', theme);
+}
 
-document.querySelectorAll('.palette-btn').forEach(btn => {
+applyPalette(localStorage.getItem('palette') || 'purple');
+applyTheme(localStorage.getItem('theme') || 'dark');
+
+document.querySelectorAll('.palette-btn[data-palette]').forEach(btn => {
   btn.addEventListener('click', () => applyPalette(btn.dataset.palette));
+});
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  applyTheme(isLight ? 'dark' : 'light');
 });
 
 // ===== GSAP Motion Path =====

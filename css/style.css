@@ -61,32 +61,78 @@
   --clr-accent-glow: rgba(91, 201, 138, 0.22);
 }
 
-/* ===== 팔레트 4: 틸 — 다크틸 / 시안 ===== */
-:root[data-palette="teal"] {
-  --clr-bg: #080f10;
-  --clr-bg-alt: #0c1618;
-  --clr-surface: #0f1e20;
-  --clr-border: #163030;
-  --clr-text: #dff0f0;
-  --clr-text-muted: #70a8a8;
-  --clr-accent: #0a5560;
-  --clr-accent-light: #22c5c5;
-  --clr-accent-secondary: rgba(10, 85, 96, 0.5);
-  --clr-accent-glow: rgba(34, 197, 197, 0.22);
+/* ===== 팔레트 4: 레드 — 다크크림슨 / 로즈 ===== */
+:root[data-palette="red"] {
+  --clr-bg: #120808;
+  --clr-bg-alt: #1c0c0c;
+  --clr-surface: #261212;
+  --clr-border: #3a1a1a;
+  --clr-text: #f5e8e8;
+  --clr-text-muted: #aa7a7a;
+  --clr-accent: #8b1a1a;
+  --clr-accent-light: #f87171;
+  --clr-accent-secondary: rgba(139, 26, 26, 0.5);
+  --clr-accent-glow: rgba(248, 113, 113, 0.22);
 }
 
-/* ===== 팔레트 5: 인디고 — 미드나잇 / 인디고 ===== */
-:root[data-palette="indigo"] {
-  --clr-bg: #09091a;
-  --clr-bg-alt: #0f0e24;
-  --clr-surface: #14132e;
-  --clr-border: #1e1c42;
-  --clr-text: #e5e4f8;
-  --clr-text-muted: #8582b8;
-  --clr-accent: #2d2a8a;
-  --clr-accent-light: #818cf8;
-  --clr-accent-secondary: rgba(45, 42, 138, 0.5);
-  --clr-accent-glow: rgba(129, 140, 248, 0.22);
+/* ===== 팔레트 5: 오렌지 — 다크번트 / 앰버 ===== */
+:root[data-palette="orange"] {
+  --clr-bg: #100a04;
+  --clr-bg-alt: #1a1006;
+  --clr-surface: #221608;
+  --clr-border: #3a260e;
+  --clr-text: #f5ece0;
+  --clr-text-muted: #aa9070;
+  --clr-accent: #7c3300;
+  --clr-accent-light: #fb923c;
+  --clr-accent-secondary: rgba(124, 51, 0, 0.5);
+  --clr-accent-glow: rgba(251, 146, 60, 0.22);
+}
+
+/* ═══ 라이트 모드 기본 (퍼플) ═══ */
+:root[data-theme="light"] {
+  --clr-bg: #f6f5fc;
+  --clr-bg-alt: #eceaf7;
+  --clr-surface: #ffffff;
+  --clr-border: #d5d2ee;
+  --clr-text: #1a1830;
+  --clr-text-muted: #5a567a;
+  --clr-accent: #4a2bb8;
+  --clr-accent-light: #7055e0;
+  --clr-accent-secondary: rgba(74, 43, 184, 0.1);
+  --clr-accent-glow: rgba(74, 43, 184, 0.14);
+  --clr-event: #8b5e00;
+  --clr-event-dim: rgba(139, 94, 0, 0.12);
+  --clr-event-text: #ffffff;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+/* 라이트 + 블루 */
+:root[data-palette="blue"][data-theme="light"] {
+  --clr-bg: #f0f4fc; --clr-bg-alt: #e4ecf8; --clr-surface: #ffffff; --clr-border: #c8d8f0;
+  --clr-text: #0d1830; --clr-text-muted: #4a607a;
+  --clr-accent: #1e4db7; --clr-accent-light: #2e6ad4;
+  --clr-accent-secondary: rgba(30, 77, 183, 0.1); --clr-accent-glow: rgba(30, 77, 183, 0.14);
+}
+/* 라이트 + 그린 */
+:root[data-palette="green"][data-theme="light"] {
+  --clr-bg: #f0f8f2; --clr-bg-alt: #e4f0e8; --clr-surface: #ffffff; --clr-border: #c0ddc8;
+  --clr-text: #0e1f14; --clr-text-muted: #3a6a48;
+  --clr-accent: #1c6b40; --clr-accent-light: #2a9058;
+  --clr-accent-secondary: rgba(28, 107, 64, 0.1); --clr-accent-glow: rgba(28, 107, 64, 0.14);
+}
+/* 라이트 + 레드 */
+:root[data-palette="red"][data-theme="light"] {
+  --clr-bg: #fdf0f0; --clr-bg-alt: #f8e4e4; --clr-surface: #ffffff; --clr-border: #f0c8c8;
+  --clr-text: #200808; --clr-text-muted: #6a3030;
+  --clr-accent: #8b1a1a; --clr-accent-light: #b83030;
+  --clr-accent-secondary: rgba(139, 26, 26, 0.1); --clr-accent-glow: rgba(139, 26, 26, 0.14);
+}
+/* 라이트 + 오렌지 */
+:root[data-palette="orange"][data-theme="light"] {
+  --clr-bg: #fdf5ee; --clr-bg-alt: #f8ece0; --clr-surface: #ffffff; --clr-border: #f0d8c0;
+  --clr-text: #1e0e04; --clr-text-muted: #6a4820;
+  --clr-accent: #7c3300; --clr-accent-light: #a34800;
+  --clr-accent-secondary: rgba(124, 51, 0, 0.1); --clr-accent-glow: rgba(124, 51, 0, 0.14);
 }
 
 /* ===== Reset ===== */
@@ -190,16 +236,16 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124, 106, 245, 0.15) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 80% 70%, rgba(124, 106, 245, 0.08) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, var(--clr-accent-secondary) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 70%, var(--clr-accent-glow) 0%, transparent 60%);
   pointer-events: none;
+  transition: background 0.4s ease;
 }
 .hero__bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(124, 106, 245, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--clr-accent-glow) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
 }
@@ -579,8 +625,46 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; }
 .palette-preview--purple { background: linear-gradient(135deg, #3d1f8a 0%, #a599f7 100%); }
 .palette-preview--blue   { background: linear-gradient(135deg, #1e4db7 0%, #5b9cf6 100%); }
 .palette-preview--green  { background: linear-gradient(135deg, #1c6b40 0%, #5bc98a 100%); }
-.palette-preview--teal   { background: linear-gradient(135deg, #0a5560 0%, #22c5c5 100%); }
-.palette-preview--indigo { background: linear-gradient(135deg, #2d2a8a 0%, #818cf8 100%); }
+.palette-preview--red    { background: linear-gradient(135deg, #8b1a1a 0%, #f87171 100%); }
+.palette-preview--orange { background: linear-gradient(135deg, #7c3300 0%, #fb923c 100%); }
+
+/* 테마 토글 버튼 */
+.theme-btn {
+  border-top: 1px solid var(--clr-border) !important;
+  margin-top: 4px;
+  padding-top: 10px !important;
+  height: auto !important;
+  border-radius: 0 0 32px 32px !important;
+  width: 100% !important;
+  justify-content: center;
+  color: var(--clr-text-muted);
+  font-size: 14px;
+  line-height: 1;
+}
+.theme-btn:hover { color: var(--clr-event); }
+.theme-icon { pointer-events: none; display: block; }
+.theme-icon--moon { display: none; }
+[data-theme="light"] .theme-icon--sun  { display: none; }
+[data-theme="light"] .theme-icon--moon { display: block; }
+
+/* ── 라이트 모드 전용 조정 ── */
+[data-theme="light"] .nav.scrolled {
+  background: rgba(246, 245, 252, 0.88);
+}
+[data-theme="light"] .highlight {
+  text-shadow: 0 0 20px rgba(139, 94, 0, 0.25);
+  -webkit-text-fill-color: var(--clr-event);
+}
+[data-theme="light"] #hero-anim-path {
+  stroke: rgba(0, 0, 40, 0.18);
+}
+[data-theme="light"] .hero canvas {
+  opacity: 0.35;
+}
+[data-theme="light"] .work-card:hover,
+[data-theme="light"] .skill-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
 /* ===== Footer ===== */
 .footer {
