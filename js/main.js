@@ -1,3 +1,16 @@
+// ===== GSAP Motion Path =====
+gsap.registerPlugin(MotionPathPlugin);
+gsap.to("#hero-anim-rect", {
+  motionPath: {
+    path: "#hero-anim-path",
+    align: "#hero-anim-path",
+    alignOrigin: [0.5, 0.5],
+  },
+  duration: 18,
+  ease: "none",
+  repeat: -1,
+});
+
 // ===== Hero Effects =====
 
 // 1. Canvas particles

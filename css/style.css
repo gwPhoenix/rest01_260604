@@ -198,6 +198,29 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; }
   animation: scrollBounce 1.5s infinite;
 }
 
+/* ===== Hero SVG Animation ===== */
+.hero__svg-anim {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(32vw, 360px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s 1.2s forwards;
+}
+#hero-anim-svg {
+  width: 100%;
+  overflow: visible;
+}
+#hero-anim-rect {
+  filter: drop-shadow(0 0 6px rgba(255,135,9,0.8)) drop-shadow(0 0 14px rgba(247,189,248,0.5));
+}
+@media (max-width: 900px) {
+  .hero__svg-anim { display: none; }
+}
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-flex;
