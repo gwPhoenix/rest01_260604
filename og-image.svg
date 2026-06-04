@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#03081e"/>
+      <stop offset="100%" stop-color="#0d1b52"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c6af5"/>
+      <stop offset="100%" stop-color="#c4b8ff"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#4a2bb8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#4a2bb8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="75%" r="45%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="240" cy="200" r="420" fill="url(#glow1)"/>
+  <circle cx="1020" cy="460" r="340" fill="url(#glow2)"/>
+
+  <!-- 격자 패턴 -->
+  <defs>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="rgba(124,106,245,0.18)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- 왼쪽 세로 강조 바 -->
+  <rect x="80" y="185" width="5" height="220" rx="2.5" fill="url(#accent)"/>
+
+  <!-- 서브 타이틀 -->
+  <text x="108" y="222"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif"
+    font-size="20" fill="#8888aa" letter-spacing="3">
+    SERVICE OPERATION · DATA AUTOMATION · E-COMMERCE
+  </text>
+
+  <!-- 메인 헤드라인 -->
+  <text x="108" y="300"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif"
+    font-size="54" font-weight="700" fill="#eae8f5">
+    한국의 웹개발 전문가
+  </text>
+
+  <!-- 옐로우 구분선 -->
+  <rect x="108" y="318" width="140" height="4" rx="2" fill="#ffd600"/>
+
+  <!-- 이름 -->
+  <text x="108" y="415"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif"
+    font-size="88" font-weight="900" fill="url(#accent)">
+    이애본
+  </text>
+
+  <!-- 경력 정보 -->
+  <text x="108" y="490"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="20" fill="#ffd600">
+    경력 7년 11개월
+  </text>
+  <text x="108" y="518"
+    font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif"
+    font-size="17" fill="#5a567a">
+    이커머스 · ML Data QA · SCM · 업무 자동화
+  </text>
+
+  <!-- 오른쪽 원형 장식 -->
+  <circle cx="1030" cy="300" r="130" fill="none" stroke="rgba(124,106,245,0.25)" stroke-width="1.5"/>
+  <circle cx="1030" cy="300" r="100" fill="rgba(74,43,184,0.18)"/>
+  <circle cx="1030" cy="300" r="70"  fill="rgba(74,43,184,0.12)"/>
+  <text x="1030" y="328"
+    text-anchor="middle"
+    font-family="Inter, sans-serif"
+    font-size="56" font-weight="900" fill="url(#accent)">
+    GW
+  </text>
+
+  <!-- URL 워터마크 -->
+  <text x="1150" y="610"
+    text-anchor="end"
+    font-family="Inter,sans-serif"
+    font-size="15" fill="#2e2c50">
+    gwphoenix.github.io/rest01_260604
+  </text>
+</svg>
