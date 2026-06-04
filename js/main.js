@@ -1,3 +1,21 @@
+// ===== Palette Switcher =====
+const PALETTES = ['purple', 'blue', 'green', 'teal', 'indigo'];
+const saved = localStorage.getItem('palette') || 'purple';
+
+function applyPalette(name) {
+  document.documentElement.setAttribute('data-palette', name === 'purple' ? '' : name);
+  document.querySelectorAll('.palette-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.palette === name);
+  });
+  localStorage.setItem('palette', name);
+}
+
+applyPalette(saved);
+
+document.querySelectorAll('.palette-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyPalette(btn.dataset.palette));
+});
+
 // ===== GSAP Motion Path =====
 gsap.registerPlugin(MotionPathPlugin);
 gsap.to("#hero-anim-rect", {

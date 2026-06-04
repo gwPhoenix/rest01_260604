@@ -1,21 +1,92 @@
 /* ===== CSS Variables ===== */
 :root {
-  --clr-bg: #0f0f13;
-  --clr-bg-alt: #16161e;
-  --clr-surface: #1e1e2a;
-  --clr-border: #2a2a3a;
-  --clr-text: #e8e8f0;
-  --clr-text-muted: #8888aa;
-  --clr-accent: #7c6af5;
+  /* ── 배경 & 서피스 (팔레트별 오버라이드) ── */
+  --clr-bg: #0d0b16;
+  --clr-bg-alt: #13111f;
+  --clr-surface: #1c1929;
+  --clr-border: #2a2640;
+
+  /* ── 텍스트 ── */
+  --clr-text: #eae8f5;
+  --clr-text-muted: #8a87aa;
+
+  /* ── 주 컬러: 다크 퍼플 (팔레트별 오버라이드) ── */
+  --clr-accent: #4a2bb8;
   --clr-accent-light: #a599f7;
-  --clr-accent-glow: rgba(124, 106, 245, 0.25);
+  --clr-accent-secondary: rgba(74, 43, 184, 0.5);  /* 보조: 주컬러 50% */
+  --clr-accent-glow: rgba(74, 43, 184, 0.22);
+
+  /* ── 이벤트 컬러: 옐로우 (전 팔레트 고정) ── */
+  --clr-event: #ffd600;
+  --clr-event-dim: rgba(255, 214, 0, 0.15);
+  --clr-event-text: #1a1400;
+
+  /* ── 상태 컬러 ── */
   --clr-green: #4ade80;
+
+  /* ── 기타 ── */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 24px;
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --font-sans: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+/* ===== 팔레트 2: 블루 — 다크네이비 / 로열블루 ===== */
+:root[data-palette="blue"] {
+  --clr-bg: #080f1e;
+  --clr-bg-alt: #0d1628;
+  --clr-surface: #111e36;
+  --clr-border: #1e2f4e;
+  --clr-text: #e4eaf8;
+  --clr-text-muted: #7a90b8;
+  --clr-accent: #1e4db7;
+  --clr-accent-light: #5b9cf6;
+  --clr-accent-secondary: rgba(30, 77, 183, 0.5);
+  --clr-accent-glow: rgba(91, 156, 246, 0.22);
+}
+
+/* ===== 팔레트 3: 그린 — 다크그린 / 연두 ===== */
+:root[data-palette="green"] {
+  --clr-bg: #09100d;
+  --clr-bg-alt: #0e1912;
+  --clr-surface: #131f17;
+  --clr-border: #1e3326;
+  --clr-text: #e2eeea;
+  --clr-text-muted: #7aaa8a;
+  --clr-accent: #1c6b40;
+  --clr-accent-light: #5bc98a;
+  --clr-accent-secondary: rgba(28, 107, 64, 0.5);
+  --clr-accent-glow: rgba(91, 201, 138, 0.22);
+}
+
+/* ===== 팔레트 4: 틸 — 다크틸 / 시안 ===== */
+:root[data-palette="teal"] {
+  --clr-bg: #080f10;
+  --clr-bg-alt: #0c1618;
+  --clr-surface: #0f1e20;
+  --clr-border: #163030;
+  --clr-text: #dff0f0;
+  --clr-text-muted: #70a8a8;
+  --clr-accent: #0a5560;
+  --clr-accent-light: #22c5c5;
+  --clr-accent-secondary: rgba(10, 85, 96, 0.5);
+  --clr-accent-glow: rgba(34, 197, 197, 0.22);
+}
+
+/* ===== 팔레트 5: 인디고 — 미드나잇 / 인디고 ===== */
+:root[data-palette="indigo"] {
+  --clr-bg: #09091a;
+  --clr-bg-alt: #0f0e24;
+  --clr-surface: #14132e;
+  --clr-border: #1e1c42;
+  --clr-text: #e5e4f8;
+  --clr-text-muted: #8582b8;
+  --clr-accent: #2d2a8a;
+  --clr-accent-light: #818cf8;
+  --clr-accent-secondary: rgba(45, 42, 138, 0.5);
+  --clr-accent-glow: rgba(129, 140, 248, 0.22);
 }
 
 /* ===== Reset ===== */
@@ -149,10 +220,12 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; }
   animation: fadeUp 0.8s 0.4s forwards;
 }
 .highlight {
-  background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--clr-event);
+  -webkit-text-fill-color: var(--clr-event);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  text-shadow: 0 0 28px rgba(255, 214, 0, 0.22);
 }
 .hero__desc {
   font-size: 1.15rem;
@@ -462,6 +535,52 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; }
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--clr-border); }
+
+/* ===== Palette Switcher ===== */
+.palette-switcher {
+  position: fixed;
+  right: 20px;
+  bottom: 32px;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 32px;
+  padding: 12px 9px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+.palette-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.palette-btn:hover { transform: scale(1.12); }
+.palette-btn.active {
+  border-color: var(--clr-event);
+  transform: scale(1.18);
+}
+.palette-preview {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.palette-preview--purple { background: linear-gradient(135deg, #3d1f8a 0%, #a599f7 100%); }
+.palette-preview--blue   { background: linear-gradient(135deg, #1e4db7 0%, #5b9cf6 100%); }
+.palette-preview--green  { background: linear-gradient(135deg, #1c6b40 0%, #5bc98a 100%); }
+.palette-preview--teal   { background: linear-gradient(135deg, #0a5560 0%, #22c5c5 100%); }
+.palette-preview--indigo { background: linear-gradient(135deg, #2d2a8a 0%, #818cf8 100%); }
 
 /* ===== Footer ===== */
 .footer {
